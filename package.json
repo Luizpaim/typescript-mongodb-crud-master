@@ -4,13 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "ng": "ng",
+        "clean": "rimraf ./dist",
+        "dev": "ts-node src/index.ts",
+        "public": "ncp ./src/public/ ./dist/public/",
+        "hbscopy": "ncp ./src/views/ ./dist/views/",
+        "build": "npm run clean && tsc && npm run hbscopy && npm run public",
         "start": "node serve.js",
-        "start_dev": "ng serve",
-        "build": "ng build",
-        "watch": "ng build --watch --configuration development",
-        "test": "ng test",
-        "heroku-postbuild": "ng build --prod"
+        "heroku-postbuild": "npm build --prod"
     },
     "keywords": [],
     "author": "",
