@@ -4,13 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "clean": "rimraf ./dist",
-        "dev": "ts-node src/index.ts",
-        "public": "ncp ./src/public/ ./dist/public/",
-        "hbscopy": "ncp ./src/views/ ./dist/views/",
-        "build": "npm run clean && tsc && npm run hbscopy && npm run public",
-        "start": "node dist/index.js",
-        "heroku-postbuild": "build --prod"
+        "ng": "ng",
+        "start": "node serve.js",
+        "start_dev": "ng serve",
+        "build": "ng build",
+        "watch": "ng build --watch --configuration development",
+        "test": "ng test",
+        "heroku-postbuild": "ng build --prod"
     },
     "keywords": [],
     "author": "",
@@ -20,6 +20,7 @@
         "express-handlebars": "^3.0.2",
         "mongoose": "^5.4.20",
         "morgan": "^1.9.1",
+        "path": "^0.12.7",
         "rimraf": "^2.6.3"
     },
     "devDependencies": {
@@ -30,5 +31,9 @@
         "nodemon": "^1.18.10",
         "ts-node": "^8.0.3",
         "typescript": "^3.3.4000"
+    },
+    "engines": {
+        "node": "14.17.6",
+        "npm": "6.14.15"
     }
 }
