@@ -13,22 +13,22 @@ class Applicaction {
 
     constructor() {
         this.app = express();
-        this.settings();
+        // this.settings();
         this.middlewares();
         this.routes();
     }
 
-    settings() {
-        this.app.set('port', 3000);
-        this.app.set('views', path.join(__dirname, 'views'));
-        this.app.engine('.hbs', exphbs({
-            layoutsDir: path.join(this.app.get('views'), 'layouts'),
-            partialsDir: path.join(this.app.get('views'), 'partials'),
-            defaultLayout: 'main',
-            extname: '.hbs'
-        }));
-        this.app.set('view engine', '.hbs');
-    }
+    // settings() {
+        // this.app.set('port', 3000);
+        // this.app.set('views', path.join(__dirname, 'views'));
+        // this.app.engine('.hbs', exphbs({
+            // layoutsDir: path.join(this.app.get('views'), 'layouts'),
+            // partialsDir: path.join(this.app.get('views'), 'partials'),
+            // defaultLayout: 'main',
+            // extname: '.hbs'
+        // }));
+    //  this.app.set('view engine', '.hbs');
+    // }
 
     middlewares() {
         this.app.use(morgan('dev'));
